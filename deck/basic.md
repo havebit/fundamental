@@ -4,23 +4,19 @@ html: true
 paginate: true
 header: '![image width:80px](https://go.dev/images/go-logo-blue.svg)'
 footer: '![image width:80px](https://go.dev/images/gophers/pilot-bust.svg)'
+theme: base-theme
+style: |
+    section {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    section h1 {
+        color: #00A29C;
+    }
+    section h2 {
+        color: #00A29C;
+    }
 ---
-
-<style>
-section {
-    font-family: Arial, Helvetica, sans-serif;
-}
-section h1 {
-    color: #00A29C;
-}
-section h2 {
-    color: #00A29C;
-}
-</style>
-
-# go
-
-## Basic Syntax
+# Basic Syntax
 
 Pallat Anchaleechamaikorn
 Go Developer
@@ -43,6 +39,34 @@ https://go.dev/tour
 
 ---
 
+<style scoped>
+    li {
+        font-size: 0.8rem;
+    }
+</style>
+
+## outline
+
+- Installations
+- Go toolchain to build and run
+- Syntax and Control structure
+- Testing and TDD
+- Packages
+- Interface
+- First-Class Function
+- Higher-Order Function
+- Closure Function
+- Goroutine & Channel
+- Simple API with net/http
+
+---
+
+## Go vs Golang
+
+![bg center width:400px](https://go.dev/images/gophers/wrench.svg)
+
+---
+
 ## Go Users
 
 https://github.com/golang/go/wiki/GoUsers
@@ -55,28 +79,82 @@ https://dev.to/pallat/install-go-4a1a
 
 ---
 
+## Download
+
+https://go.dev/
+
+---
+
+## OS Environment
+
+.profile .zshrc
+
+```sh
+GOROOT=$HOME/{go package}
+GOPATH=$HOME/go
+GOBIN=$GOPATH/bin
+PATH=$GOROOT/bin:$GOBIN:$PATH
+```
+
+```sh
+GOROOT=/Users/pallat/sdk/go
+GOPATH=/Users/pallat/go
+GOBIN=$GOPATH/bin
+PATH=$GOROOT/bin:$GOBIN:$PATH
+```
+
+---
+
+## Go Toolchain
+
+### Go Environment
+
+```sh
+go env
+```
+
+---
+
+## Visual Studio Code
+
+---
+
 ## Initial a project
 
 ### linux/Macbook
 
-    mkdir hello && cd hello
+```sh
+mkdir hello && cd hello
+```
 
 ### windows
 
-    md hello
-    cd hello
+```sh
+md hello
+cd hello
+```
 
 ---
 
 ## Open VS Code
 
-    code .
+```
+code .
+```
 
 ---
 
 ## Initial go module
 
-    go mod init hello
+```sh
+go mod init hello
+```
+
+or
+
+```sh
+go mod init github.com/pallat/hello
+```
 
 go.mod
 
@@ -92,7 +170,9 @@ go.mod
 
 run
 
-    go run main.go
+```sh
+go run main.go
+```
 
 ---
 
@@ -502,12 +582,6 @@ Foo/Bar
 ## problem #30
 
     given 30 want "FooBar"
-
----
-
-## Exercise - RESTful API of FooBar
-
-    try net/http with gorilla/mux
 
 ---
 

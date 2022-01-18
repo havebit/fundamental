@@ -170,6 +170,18 @@ if s, ok := i.(string); ok {
 
 ---
 
+## exercise: FizzBuzz(string|int)
+
+```go
+foobar.SayAny(3)
+"Foo"
+
+foobar.SayAny("3")
+"Foo"
+```
+
+---
+
 ## switch
 
 ```go

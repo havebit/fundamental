@@ -4,23 +4,19 @@ html: true
 paginate: true
 header: '![image width:80px](https://go.dev/images/go-logo-blue.svg)'
 footer: '![image width:80px](https://go.dev/images/gophers/pilot-bust.svg)'
+theme: base-theme
+style: |
+    section {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    section h1 {
+        color: #00A29C;
+    }
+    section h2 {
+        color: #00A29C;
+    }
 ---
-
-<style>
-section {
-    font-family: Arial, Helvetica, sans-serif;
-}
-section h1 {
-    color: #00A29C;
-}
-section h2 {
-    color: #00A29C;
-}
-</style>
-
-# go
-
-## Basic Syntax
+# Basic Syntax
 
 Pallat Anchaleechamaikorn
 Go Developer
