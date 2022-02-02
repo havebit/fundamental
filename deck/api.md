@@ -79,6 +79,33 @@ Todo List API
 
 ---
 
+## Why do we need to use Go instead of other languages
+
+try this in javascript
+
+```js
+parseInt(0.5)
+parseInt(0.05)
+parseInt(0.005)
+parseInt(0.0005)
+parseInt(0.00005)
+parseInt(0.000005)
+parseInt(0.0000005)
+parseInt(0.00000005)
+```
+
+---
+
+## Tips: floating point for money
+
+and this
+
+```js
+0.34 + 0.01
+```
+
+---
+
 <!-- _class: cl -->
 
 ## init the project

@@ -67,6 +67,12 @@ https://go.dev/tour
 
 ---
 
+## Wiki
+
+https://en.wikipedia.org/wiki/Go_(programming_language)
+
+---
+
 ## Go Users
 
 https://github.com/golang/go/wiki/GoUsers

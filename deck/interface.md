@@ -114,6 +114,24 @@ func catchMe() {
 
 ---
 
+## interface type
+
+```go
+var a interface{}   // empty interface
+
+type Stringer interface {
+    String() string
+}
+
+var s Stringer
+
+var s interface {
+    String() string
+}
+```
+
+---
+
 ## interface{}: empty interface
 
 ```go
@@ -155,6 +173,43 @@ var n int
 n = i
 ```
 
+---
+
+## interface value
+
+| value | type |
+|:----:|:----:|
+| nil | nil |
+---
+
+<style scoped>
+section {
+    display: inline-block;
+}
+section table {
+    width: auto;
+    font-size: 20px;
+    float: left;
+}
+
+</style>
+## interface value of string
+
+```go
+var i interface{}
+
+s := "hello"
+i = s
+
+```
+
+|s| type | value | address ||
+|-|:----:|:-----:|:-------:|-|
+|| string| "hello" | 0x12345 ||
+
+ |i| value | type |
+ |-|:----:|:----:|
+ || 0x12345 | string |
 ---
 
 ## interface: type assertion
@@ -251,6 +306,26 @@ By convention, one-method interfaces are named by the method name plus an -er su
     type areaer interface {
         area() float64
     }
+```
+
+---
+
+## Implemented Implicitly
+
+```go
+type Stringer interface {
+   String() string
+}
+
+type String string
+func (s String) String() string {
+   return string(s)
+}
+
+type Int int
+func (i Int) String() string {
+   return strconv.Itoa(int(i))
+}
 ```
 
 ---
