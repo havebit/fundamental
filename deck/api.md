@@ -709,4 +709,3 @@ docker run -p:8081:8081 --env-file ./.env --link some-mariadb:db --name myapp to
 ---
 
 ## Works with Frontend
-

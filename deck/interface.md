@@ -4,19 +4,17 @@ html: true
 paginate: true
 header: '![image width:80px](https://go.dev/images/go-logo-blue.svg)'
 footer: '![image width:80px](https://go.dev/images/gophers/pilot-bust.svg)'
+style: |
+  section {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  section h1 {
+    color: #00A29C;
+  }
+  section h2 {
+    color: #00A29C;
+  }
 ---
-
-<style>
-section {
-    font-family: Arial, Helvetica, sans-serif;
-}
-section h1 {
-    color: #00A29C;
-}
-section h2 {
-    color: #00A29C;
-}
-</style>
 
 # go
 
@@ -111,6 +109,14 @@ func catchMe() {
     fmt.Println(s[1])
 }
 ```
+
+---
+
+## defer: exercise
+
+API greeting message with PORT
+ending message when exit
+recover message when panic
 
 ---
 
@@ -225,7 +231,7 @@ if s, ok := i.(string); ok {
 
 ---
 
-## exercise: FizzBuzz(string|int)
+## exercise: foobar.SayAny(string|int)
 
 ```go
 foobar.SayAny(3)
@@ -303,9 +309,13 @@ type Stringer interface {
 By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
 
 ```go
-    type areaer interface {
-        area() float64
-    }
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
 ```
 
 ---
@@ -339,11 +349,11 @@ func (i Int) String() string {
 test it
 
 ```go
-func fizzBuzzString() string {
+func RandomSay() string {
     src := rand.NewSource(time.Now().Unix())
     r := rand.New(src)
     
-    return fmt.Sprintf("%s%s%s",fizzbuzz.Say(r.Intn(9)+1),fizzbuzz.Say(r.Intn(9)+1),fizzbuzz.Say(r.Intn(9)+1),fizzbuzz.Say(r.Intn(9)+1))
+    return say(r.Intn(9)+1)
 }
 ```
 
@@ -351,7 +361,18 @@ func fizzBuzzString() string {
 
 ## Exercise test double
 
-Random 4 number pass to FizzBuzz and test it
+Random 4 number pass to FooBar and test it
+
+```go
+type Intner interface {
+    Intn(int) int
+}
+
+func RandomSay(r Intner) string {}
+
+```
+
+ex: **"1-2-Foo-Bar"**
 
 ---
 

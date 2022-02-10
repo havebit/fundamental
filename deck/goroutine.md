@@ -4,19 +4,17 @@ html: true
 paginate: true
 header: '![image width:80px](https://go.dev/images/go-logo-blue.svg)'
 footer: '![image width:80px](https://go.dev/images/gophers/pilot-bust.svg)'
+style: |
+  section {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  section h1 {
+    color: #00A29C;
+  }
+  section h2 {
+    color: #00A29C;
+  }
 ---
-
-<style>
-section {
-    font-family: Arial, Helvetica, sans-serif;
-}
-section h1 {
-    color: #00A29C;
-}
-section h2 {
-    color: #00A29C;
-}
-</style>
 
 # go
 
@@ -91,28 +89,12 @@ func factory() (func(), func() int) {
 
 ---
 
-## Exercise Wrapper Function
-
-> Make a Wrapper for FizzBuzz handler to validate JWT
-
 ---
 
 ## func type
 
 ```go
-type areaFunc func(float64, float64) float64 
-```
-
----
-
-## Exercise JWT Validator
-
-Validate JWT in FizzBuzzHandler
-
-```http
-GET http://localhost:8080/fizzbuzz/3
-
-Header["Authorization"]: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+type IntnFunc func(int) int
 ```
 
 ---
@@ -120,17 +102,30 @@ Header["Authorization"]: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOi
 ## method on function
 
 ```go
-    type IntnFunc func(int) int
+type IntnFunc func(int) int
 
-    func (fn IntnFunc) Intn(n int) int {
-        return fn(n)
-    }
+func (fn IntnFunc) Intn(n int) int {
+    return fn(n)
+}
 ```
+
 ---
 
-## API
+## Demo: RandomSay with IntnFunc
 
-### Foo/Bar
+```go
+var intn IntnFunc = r.Intn
+```
+
+---
+
+## exercise: API of FooBar
+
+```go
+GET http://localhost:8081/foobar/3
+GET http://localhost:8081/foobar/5
+GET http://localhost:8081/foobar/15
+```
 
 ---
 
@@ -224,6 +219,40 @@ func printout(i int, ch chan struct{}) {
     fmt.Println(i)
     ch <- struct{}{}
 }
+```
+
+---
+
+## try to connect to DB
+
+```sh
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=myapp -d postgres
+```
+
+---
+
+## Goroutine exercise
+
+```go
+go even(evenCh)
+go odd(oddCh)
+
+for i := 0; i < 100; i++ {
+    if i%2 == 0 {
+        evenCh <- i
+    } else {
+        oddCh <- i
+    }
+}
+```
+
+---
+
+## http Client
+
+```go
+http.Get()
+http.Post()
 ```
 
 ---
