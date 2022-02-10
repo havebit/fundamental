@@ -157,6 +157,16 @@ func main() {
 
 ---
 
+## Fiber.io
+
+$\bigstar$ Some values returned from *fiber.Ctx are not immutable by default
+
+### Issue
+
+https://github.com/gofiber/fiber/issues/426
+
+---
+
 ## database/sql
 
 ```go
@@ -196,7 +206,7 @@ func init() {
 
 ```go
 type Driver interface {
-	Open(name string) (Conn, error)
+    Open(name string) (Conn, error)
 }
 ```
 
@@ -239,7 +249,8 @@ import (
 )
 
 func main() {
-    db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+    dsn := "host=localhost user=postgres password=mysecretpassword dbname=myapp port=5432"
+    db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
     if err != nil {
     panic("failed to connect database")
     }
@@ -285,34 +296,12 @@ type Todo struct {
 
 ---
 
-## Fiber & Gorm
-
-Demo: simple Fiber API and Gorm DB
-
----
-
-## Fiber inject Gorm DB as dependencies
-
-Demo: simple Fiber API and Gorm DB
-
----
-
 ## Todo Package
 
 - Json binding
 - Insert into Table
 - Return Json error
 - Return OK Response
-
----
-
-## Fiber.io
-
-$\bigstar$ Some values returned from *fiber.Ctx are not immutable by default
-
-### Issue
-
-https://github.com/gofiber/fiber/issues/426
 
 ---
 
@@ -648,16 +637,6 @@ if !limiter.Allow() {
 go install github.com/tsenart/vegeta@latest
 
 echo "GET http://:8081/limitz" | vegeta attack -rate=10/s -duration=1s | vegeta report
-```
-
----
-
-## Change db to MariaDB
-
-add DSN to .env
-
-```ini
-DSN=root:my-secret-pw@tcp(db:3306)/myapp?charset=utf8mb4&parseTime=True&loc=Local
 ```
 
 ---
