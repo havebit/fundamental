@@ -245,7 +245,7 @@ https://github.com/avelino/awesome-go#orm
 ```go
 import (
     "gorm.io/gorm"
-    "gorm.io/driver/sqlite"
+    "gorm.io/driver/postgres"
 )
 
 func main() {
@@ -567,7 +567,7 @@ SIGNATURE="drowssap"
 ## Add external to the binary
 
 ```sh
-go build -ldflags “-X main.somevar=cjexpress” -o app
+go build -ldflags “-X main.somevar=training” -o app
 ```
 
 ---
