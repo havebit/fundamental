@@ -82,6 +82,25 @@ var name [n]T
 
 ---
 
+### Exercise: Array
+
+multiply a matrix by a single number
+
+```go
+matrix := [4][4]int{
+    {1, 3, 4, 2},
+    {3, 4, 2, 1},
+    {4, 2, 1, 3},
+    {2, 1, 3, 4},
+}
+
+r := multiply(matrix, 2)
+
+func multiply(matix [4][4]int, n int) [4][4]int {}
+```
+
+---
+
 ## Slice
 
 var name []T
@@ -627,6 +646,27 @@ variadic(slice...)
 
 ---
 
+## Exercise: map easy
+
+split all keys in m to keys and all values to vals
+
+```go
+m := map[string]int {
+    "G": 71,
+    "O": 79,
+    "P": 80,
+    "H": 72,
+    "E": 69,
+    "R": 82,
+}
+
+var keys := []string{}
+var vals := []int{}
+
+```
+
+---
+
 ## Exercise: map
 
 open a file oscar_age_male.csv
@@ -688,6 +728,24 @@ s := i.toString()
 
 ---
 
+## Pointer Receiver
+
+```go
+type String string
+
+func (s *String) toLoswerCase() {
+   *s = String(strings.ToLower(string(*s)))
+}
+```
+
+## Exercise: Integer type
+
+**New Integer Type with Method**
+
+**.String()** returns string value representing this integer's value
+**.parse(s string)** parse string argument as signed integer
+
+---
 ## struct type
 
 ```go
@@ -722,32 +780,6 @@ s := i.toString()
     }
 ```
 ---
-
-## Pointer Receiver
-
-```go
-type Book struct {
-   Name   string
-   Author string
-}
-
-func (book *Book) SetName(s string) {
-   return book.Name = name
-}
-
-func (book Book) String() string {
-   return book.Name + " by " + book.Author
-}
-```
-
----
-
-## Exercise: Int with get/set
-
-**New Int Type with Method**
-
-**.String()** to convert integer to string
-**.Set(n int)** to set a new value into it
 
 ---
 
