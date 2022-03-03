@@ -495,6 +495,16 @@ https://go-tour-th.appspot.com/moretypes/18
 
 ---
 
+## Delete an element in Slice
+
+```go
+s := []int{1, 2, 3, 4, 5}
+s = append(s[:2], s[3:]...)
+```
+
+
+---
+
 ## Variadic function (Variable number of arguments)
 
 func variadic(nums ...int)
@@ -651,6 +661,17 @@ print any actors name who got the oscar more than one time
 
 ```go
     type text = string
+```
+
+---
+
+## Method
+
+```go
+var i Int
+
+s := i.toString()
+
 ```
 
 ---

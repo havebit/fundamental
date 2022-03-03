@@ -350,7 +350,7 @@ b^{x} = \underbrace {b\times \dots \times b} _{x{\text{ times}}}.
 $
 
 ```go
-func power(base, exponent int) int
+func power(b, x int) int
 ```
 
 ---
