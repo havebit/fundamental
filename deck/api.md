@@ -679,7 +679,11 @@ docker build -t todo:test -f Dockerfile .
 
 ```sh
 docker run -p:8081:8081 --env-file ./.env --link some-mariadb:db --name myapp todo:test
+
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=myapp -d postgres
 ```
+
+---
 
 ---
 

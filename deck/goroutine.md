@@ -223,11 +223,10 @@ func printout(i int, ch chan struct{}) {
 
 ---
 
-## try to connect to DB
+## Excercise - Cout down 1 mins
 
-```sh
-docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=myapp -d postgres
-```
+00:59
+00:58
 
 ---
 
@@ -244,15 +243,6 @@ for i := 0; i < 100; i++ {
         oddCh <- i
     }
 }
-```
-
----
-
-## http Client
-
-```go
-http.Get()
-http.Post()
 ```
 
 ---

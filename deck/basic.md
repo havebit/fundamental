@@ -365,6 +365,32 @@ section code {
 }
 </style>
 
+## Excercise - Print out Name and Age
+
+> Pallat 45
+
+---
+
+## Excercise - Get flag Name, Age then print it out
+
+> ./app -name Pallat -age 45
+> Pallat 45
+
+---
+
+## Excercise - Get ENV Name, Age then print it out
+
+> NAME=Pallat AGE=45 ./app
+> Pallat 45
+
+---
+
+## Excercise - How many days till 2023
+
+> xx days
+
+---
+
 ## Pointer
 
 Go has pointers. A pointer holds the memory address of a value.
@@ -423,6 +449,24 @@ Unlike C, Go has no pointer arithmetic.
 
 ---
 
+## Excercise - Pointer
+
+```go
+var a **int
+var b *int
+var c int
+
+c = 10
+b = &c
+a = &b
+```
+
+### Copy b to d
+
+a -> b -> c
+a x-> d -> c
+
+---
 ## Packages
 
 ### Keyword: package

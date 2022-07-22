@@ -784,6 +784,8 @@ func (s *String) toLoswerCase() {
 }
 ```
 
+---
+
 ## Exercise: Integer type
 
 **New Integer Type with Method**
