@@ -5,16 +5,8 @@
 
 ## How to run the deck
 
-### Install
-
 ```sh
-npm install -g @marp-team/marp-cli
-```
-
-## Run
-
-```sh
-marp -s ./deck
+npx @marp-team/marp-cli@latest -s ./deck
 ```
 
 ## Lab Guideline

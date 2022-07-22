@@ -101,6 +101,22 @@ func multiply(matix [4][4]int, n int) [4][4]int {}
 
 ---
 
+### Exercise: Reverse
+
+original: "The quick brown fox jumped over the lazy dog"
+reversed: "god yzal eht revo depmuj xof nworb kciuq ehT"
+
+Implement Reverse: it should return a reverse string given
+
+(please dont't googling for the answer and don't use any completed functions)
+(make it by yourself, for loop is needed)
+
+```go
+func Reverse(s string) string {}
+```
+
+---
+
 ## Slice
 
 var name []T
@@ -108,6 +124,36 @@ var name []T
 ```go
     var slice []string // it's nil
 ```
+
+---
+
+### Slice: Two-Index Slices
+
+slice point to an array
+
+```go
+    var a := [4]int{9, 8, 7, 6}
+    s := a[1:3]
+```
+
+s = []int{8, 7}
+len(s) == 2
+cap(s) == 3, from first index to last cap of array
+
+---
+
+### Slice: Three-Index Slices
+
+slice point to an array
+
+```go
+    var a := [4]int{9, 8, 7, 6}
+    s := a[1:3:3]
+```
+
+s = []int{8, 7}
+len(s) == 2
+cap(s) == 2, from first index to the third index you give
 
 ---
 
